@@ -1,4 +1,6 @@
-﻿using VentasApp.Forms;
+﻿using System.Windows.Forms;
+using VentasApp.Forms;
+using System.Drawing;
 
 namespace VentasApp.Util
 {
@@ -10,6 +12,35 @@ namespace VentasApp.Util
             {
                 var result = dialog.ShowDialog();
                 return dialog.Confirmed;
+            }
+        }
+
+        public static void Ok(string message)
+        {
+            using (var dialog = new OkDialogForm(message))
+            {
+                var result = dialog.ShowDialog();
+            }
+        }
+
+        public static DialogResult ShowUserControlAsDialog(UserControl control, string title = "Ventana Modal", int width = 600, int height = 800)
+        {
+            using (var form = new Form())
+            {
+                form.Name = "UserControlAsDialogForm";
+                form.Text = title;
+                form.FormBorderStyle = FormBorderStyle.FixedDialog;
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.ClientSize = new Size(width, height);
+                form.Controls.Add(control);
+                form.MaximizeBox = false;
+                form.MinimizeBox = false;
+                form.ShowIcon = false;
+                form.ShowInTaskbar = false;
+
+                control.Dock = DockStyle.Fill;
+
+                return form.ShowDialog();
             }
         }
     }

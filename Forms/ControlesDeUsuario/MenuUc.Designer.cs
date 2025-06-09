@@ -36,7 +36,6 @@
             this.iconBtnReportes = new FontAwesome.Sharp.IconButton();
             this.LblVersionApp = new System.Windows.Forms.Label();
             this.iconBtnAjustes = new FontAwesome.Sharp.IconButton();
-            this.iconBtnAbrirCerrarCaja = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // IconBtnNegocio
@@ -213,34 +212,11 @@
             this.iconBtnAjustes.UseVisualStyleBackColor = true;
             this.iconBtnAjustes.Click += new System.EventHandler(this.iconBtnAjustes_Click);
             // 
-            // iconBtnAbrirCerrarCaja
-            // 
-            this.iconBtnAbrirCerrarCaja.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconBtnAbrirCerrarCaja.FlatAppearance.BorderSize = 0;
-            this.iconBtnAbrirCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconBtnAbrirCerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconBtnAbrirCerrarCaja.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconBtnAbrirCerrarCaja.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
-            this.iconBtnAbrirCerrarCaja.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconBtnAbrirCerrarCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBtnAbrirCerrarCaja.IconSize = 35;
-            this.iconBtnAbrirCerrarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconBtnAbrirCerrarCaja.Location = new System.Drawing.Point(0, 619);
-            this.iconBtnAbrirCerrarCaja.Name = "iconBtnAbrirCerrarCaja";
-            this.iconBtnAbrirCerrarCaja.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconBtnAbrirCerrarCaja.Size = new System.Drawing.Size(317, 80);
-            this.iconBtnAbrirCerrarCaja.TabIndex = 11;
-            this.iconBtnAbrirCerrarCaja.Text = "ABRIR | CERRAR CAJA";
-            this.iconBtnAbrirCerrarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconBtnAbrirCerrarCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconBtnAbrirCerrarCaja.UseVisualStyleBackColor = true;
-            // 
             // MenuUc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.Controls.Add(this.iconBtnAbrirCerrarCaja);
             this.Controls.Add(this.iconBtnAjustes);
             this.Controls.Add(this.LblVersionApp);
             this.Controls.Add(this.iconBtnReportes);
@@ -266,6 +242,5 @@
         private FontAwesome.Sharp.IconButton iconBtnReportes;
         private System.Windows.Forms.Label LblVersionApp;
         private FontAwesome.Sharp.IconButton iconBtnAjustes;
-        private FontAwesome.Sharp.IconButton iconBtnAbrirCerrarCaja;
     }
 }

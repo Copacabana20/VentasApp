@@ -41,7 +41,6 @@ namespace VentasApp.Forms.ControlesDeUsuario
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                iconBtnAbrirCerrarCaja.Visible = currentBtn.Name == "IconBtnVentas";
                 currentBtn.BackColor = Color.FromArgb(37, 36, 81);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -74,9 +73,15 @@ namespace VentasApp.Forms.ControlesDeUsuario
             //open only form
             if (currentChildForm != null)
             {
+                currentChildForm.FormClosed -= ChildForm_FormClosed; // Evita múltiples suscripciones
                 currentChildForm.Close();
             }
+
             currentChildForm = childForm;
+
+            // Asigna el evento que se ejecuta cuando el form se cierra
+            childForm.FormClosed += ChildForm_FormClosed;
+
             //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -85,6 +90,14 @@ namespace VentasApp.Forms.ControlesDeUsuario
             PnlFormChild.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void ChildForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DisableButton();
+            currentBtn = null;
+            currentChildForm = null;
+            leftBorderBtn.Visible = false;
         }
 
         private void IconBtnVentas_Click(object sender, EventArgs e)

@@ -90,5 +90,18 @@ namespace VentasApp.Servicios
 
             return ventas;
         }
+
+        public static decimal ObtenerTotalVendidoPorCaja(int IdCaja)
+        {
+            SqliteConexionDAL con = new SqliteConexionDAL();
+            string query = "SELECT SUM(Total) FROM Ventas WHERE CajaId = @CajaId";
+            var parametros = new SQLiteParameter[]
+            {
+                con.CrearParametro("@CajaId", IdCaja)
+            };
+
+            string result = con.TraerUnValorString(query, parametros);
+            return decimal.Parse(result);
+        }
     }
 }

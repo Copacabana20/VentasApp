@@ -118,12 +118,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Validacion\BaseDeDatos.cs" />
+    <Compile Include="Dto\GridDetalleVentaDto.cs" />
     <Compile Include="Enum\ToastType.cs" />
     <Compile Include="Forms\AjustesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AjustesForm.Designer.cs">
       <DependentUpon>AjustesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ControlesDeUsuario\BuscadorProductosUc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ControlesDeUsuario\BuscadorProductosUc.Designer.cs">
+      <DependentUpon>BuscadorProductosUc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OkDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OkDialogForm.Designer.cs">
+      <DependentUpon>OkDialogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ConfirmDialogForm.cs">
       <SubType>Form</SubType>
@@ -215,6 +228,12 @@
     <Compile Include="Util\Toast.cs" />
     <EmbeddedResource Include="Forms\AjustesForm.resx">
       <DependentUpon>AjustesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControlesDeUsuario\BuscadorProductosUc.resx">
+      <DependentUpon>BuscadorProductosUc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OkDialogForm.resx">
+      <DependentUpon>OkDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConfirmDialogForm.resx">
       <DependentUpon>ConfirmDialogForm.cs</DependentUpon>

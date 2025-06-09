@@ -31,10 +31,7 @@ namespace VentasApp.DAL.Validacion
                 CREATE TABLE IF NOT EXISTS Cajas (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     FechaApertura TEXT NOT NULL,
-                    FechaCierre TEXT,
-                    MontoApertura REAL NOT NULL,
-                    MontoCierre REAL,
-                    TotalVendido REAL NOT NULL
+                    FechaCierre TEXT
                 );
 
                 CREATE TABLE IF NOT EXISTS Productos (

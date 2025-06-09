@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VentasApp.Modelos
 {
@@ -8,6 +9,7 @@ namespace VentasApp.Modelos
         public DateTime Fecha { get; set; }      // Fecha y hora de la venta
         public decimal Total { get; set; }       // Total de la venta
         public int CajaId { get; set; }
+        public List<DetalleVenta> Detalle { get; set; } = new List<DetalleVenta>();
 
         public Venta() { }
 

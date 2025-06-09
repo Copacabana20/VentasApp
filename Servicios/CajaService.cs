@@ -14,38 +14,33 @@ namespace VentasApp.Servicios
             {
                 Id = Convert.ToInt32(fila["Id"]),
                 FechaApertura = DateTime.Parse(fila["FechaApertura"].ToString()),
-                MontoApertura = Convert.ToDecimal(fila["MontoApertura"])
+                FechaCierre = fila.Field<Nullable<DateTime>>("FechaCierre")
             };
 
             return data;
         }
 
-        public static void AbrirCaja(decimal montoApertura)
+        public static void AbrirCaja()
         {
             SqliteConexionDAL con = new SqliteConexionDAL();
-            string query = "INSERT INTO Cajas (FechaApertura, MontoApertura) VALUES (@Fecha, @Monto); SELECT last_insert_rowid();";
+            string query = "INSERT INTO Cajas (FechaApertura) VALUES (@Fecha); SELECT last_insert_rowid();";
 
             var parameters = new SQLiteParameter[] {
-                con.CrearParametro("@Fecha", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                con.CrearParametro("@Monto", montoApertura)
+                con.CrearParametro("@Fecha", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
             };
             
             con.Ejecutar(query,parameters);
         }
 
-        public static void CerrarCaja(int cajaId, decimal montoCierre, decimal totalVendido)
+        public static void CerrarCaja(int cajaId)
         {
             SqliteConexionDAL con = new SqliteConexionDAL();
             string query = @"UPDATE Cajas 
-                             SET FechaCierre = @FechaCierre, 
-                                 MontoCierre = @MontoCierre, 
-                                 TotalVendido = @TotalVendido 
+                             SET FechaCierre = @FechaCierre
                              WHERE Id = @Id";
             var parametros = new SQLiteParameter[]
             {
                 con.CrearParametro("@FechaCierre", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                con.CrearParametro("@MontoCierre", montoCierre),
-                con.CrearParametro("@TotalVendido", totalVendido ),
                 con.CrearParametro("@Id", cajaId )
             };
 
@@ -55,7 +50,6 @@ namespace VentasApp.Servicios
         public static Caja ObtenerUltimaCajaAbierta()
         {
             string query = "SELECT * FROM Cajas WHERE FechaCierre IS NULL ORDER BY Id DESC LIMIT 1";
-
 
             SqliteConexionDAL con = new SqliteConexionDAL();
             var tabla = con.TraerDataTable(query);
