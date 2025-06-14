@@ -37,7 +37,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.DgvVentas = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.LblHeaderArticulos = new System.Windows.Forms.Label();
@@ -45,12 +44,13 @@
             this.LblArticulos = new System.Windows.Forms.Label();
             this.LblSubTotal = new System.Windows.Forms.Label();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.DgvVentas = new System.Windows.Forms.DataGridView();
             this.PnlHeaderVentas = new System.Windows.Forms.Panel();
-            this.iconBtnAbrirCerrarCaja = new FontAwesome.Sharp.IconButton();
             this.LblFechaApertura = new System.Windows.Forms.Label();
+            this.iconBtnAbrirCerrarCaja = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.PnlHeaderVentas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,17 +73,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1020, 730);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // DgvVentas
-            // 
-            this.DgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvVentas.Location = new System.Drawing.Point(3, 39);
-            this.DgvVentas.Name = "DgvVentas";
-            this.DgvVentas.RowHeadersWidth = 51;
-            this.DgvVentas.RowTemplate.Height = 24;
-            this.DgvVentas.Size = new System.Drawing.Size(1014, 578);
-            this.DgvVentas.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -140,6 +129,7 @@
             // LblArticulos
             // 
             this.LblArticulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArticulos.Location = new System.Drawing.Point(309, 29);
             this.LblArticulos.Name = "LblArticulos";
             this.LblArticulos.Size = new System.Drawing.Size(394, 72);
@@ -150,6 +140,7 @@
             // LblSubTotal
             // 
             this.LblSubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSubTotal.Location = new System.Drawing.Point(712, 29);
             this.LblSubTotal.Name = "LblSubTotal";
             this.LblSubTotal.Size = new System.Drawing.Size(296, 72);
@@ -165,8 +156,19 @@
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(294, 64);
             this.TxtCodigo.TabIndex = 5;
-            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
             this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
+            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
+            // 
+            // DgvVentas
+            // 
+            this.DgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvVentas.Location = new System.Drawing.Point(3, 39);
+            this.DgvVentas.Name = "DgvVentas";
+            this.DgvVentas.RowHeadersWidth = 51;
+            this.DgvVentas.RowTemplate.Height = 24;
+            this.DgvVentas.Size = new System.Drawing.Size(1014, 578);
+            this.DgvVentas.TabIndex = 0;
             // 
             // PnlHeaderVentas
             // 
@@ -178,6 +180,17 @@
             this.PnlHeaderVentas.Name = "PnlHeaderVentas";
             this.PnlHeaderVentas.Size = new System.Drawing.Size(1014, 30);
             this.PnlHeaderVentas.TabIndex = 2;
+            // 
+            // LblFechaApertura
+            // 
+            this.LblFechaApertura.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblFechaApertura.ForeColor = System.Drawing.Color.White;
+            this.LblFechaApertura.Location = new System.Drawing.Point(0, 0);
+            this.LblFechaApertura.Name = "LblFechaApertura";
+            this.LblFechaApertura.Size = new System.Drawing.Size(703, 30);
+            this.LblFechaApertura.TabIndex = 1;
+            this.LblFechaApertura.Text = "label1";
+            this.LblFechaApertura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // iconBtnAbrirCerrarCaja
             // 
@@ -196,17 +209,6 @@
             this.iconBtnAbrirCerrarCaja.UseVisualStyleBackColor = true;
             this.iconBtnAbrirCerrarCaja.Click += new System.EventHandler(this.iconBtnAbrirCerrarCaja_Click);
             // 
-            // LblFechaApertura
-            // 
-            this.LblFechaApertura.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblFechaApertura.ForeColor = System.Drawing.Color.White;
-            this.LblFechaApertura.Location = new System.Drawing.Point(0, 0);
-            this.LblFechaApertura.Name = "LblFechaApertura";
-            this.LblFechaApertura.Size = new System.Drawing.Size(703, 30);
-            this.LblFechaApertura.TabIndex = 1;
-            this.LblFechaApertura.Text = "label1";
-            this.LblFechaApertura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // VentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,9 +219,9 @@
             this.Text = "VentasForm";
             this.Load += new System.EventHandler(this.VentasForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).EndInit();
             this.PnlHeaderVentas.ResumeLayout(false);
             this.ResumeLayout(false);
 

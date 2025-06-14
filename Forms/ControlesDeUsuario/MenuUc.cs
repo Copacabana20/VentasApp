@@ -98,6 +98,12 @@ namespace VentasApp.Forms.ControlesDeUsuario
             currentBtn = null;
             currentChildForm = null;
             leftBorderBtn.Visible = false;
+
+            if (sender is DatosNegocioForm)
+            {
+                var HomeForm = this.FindForm() as HomeForm;
+                HomeForm.ActualizarHeader();
+            }
         }
 
         private void IconBtnVentas_Click(object sender, EventArgs e)

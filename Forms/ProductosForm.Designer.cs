@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Windows.Controls.Primitives;
+using System.Windows.Forms;
 
 namespace VentasApp.Forms
 {
@@ -36,7 +37,6 @@ namespace VentasApp.Forms
             this.LblProducto = new System.Windows.Forms.Label();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.LblPrecio = new System.Windows.Forms.Label();
-            this.LblBusqueda = new System.Windows.Forms.Label();
             this.iconBtnGuardar = new FontAwesome.Sharp.IconButton();
             this.iconBtnEditProd = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -44,14 +44,12 @@ namespace VentasApp.Forms
             this.LblUltActualizacion = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.PnlCargaProductos = new System.Windows.Forms.Panel();
-            this.PnlGridProductos = new System.Windows.Forms.Panel();
-            this.DgvProductos = new System.Windows.Forms.DataGridView();
-            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buscadorProductosUc1 = new VentasApp.Forms.ControlesDeUsuario.BuscadorProductosUc();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.PnlCargaProductos.SuspendLayout();
-            this.PnlGridProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblCodigo
@@ -72,7 +70,7 @@ namespace VentasApp.Forms
             this.TxtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.TxtCodigo.Location = new System.Drawing.Point(19, 48);
             this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(393, 55);
+            this.TxtCodigo.Size = new System.Drawing.Size(280, 55);
             this.TxtCodigo.TabIndex = 1;
             this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
             // 
@@ -82,7 +80,7 @@ namespace VentasApp.Forms
             this.TxtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.TxtProducto.Location = new System.Drawing.Point(19, 216);
             this.TxtProducto.Name = "TxtProducto";
-            this.TxtProducto.Size = new System.Drawing.Size(393, 55);
+            this.TxtProducto.Size = new System.Drawing.Size(280, 55);
             this.TxtProducto.TabIndex = 2;
             this.TxtProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtProducto_KeyUp);
             // 
@@ -104,7 +102,7 @@ namespace VentasApp.Forms
             this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.TxtPrecio.Location = new System.Drawing.Point(75, 350);
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(337, 55);
+            this.TxtPrecio.Size = new System.Drawing.Size(224, 55);
             this.TxtPrecio.TabIndex = 3;
             this.TxtPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPrecio_KeyDown);
             this.TxtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio_KeyPress);
@@ -121,17 +119,6 @@ namespace VentasApp.Forms
             this.LblPrecio.Size = new System.Drawing.Size(67, 25);
             this.LblPrecio.TabIndex = 6;
             this.LblPrecio.Text = "Precio";
-            // 
-            // LblBusqueda
-            // 
-            this.LblBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBusqueda.Location = new System.Drawing.Point(0, 0);
-            this.LblBusqueda.Name = "LblBusqueda";
-            this.LblBusqueda.Size = new System.Drawing.Size(1021, 51);
-            this.LblBusqueda.TabIndex = 8;
-            this.LblBusqueda.Text = "Buscar productos";
-            this.LblBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // iconBtnGuardar
             // 
@@ -150,7 +137,7 @@ namespace VentasApp.Forms
             this.iconBtnGuardar.Location = new System.Drawing.Point(19, 428);
             this.iconBtnGuardar.Name = "iconBtnGuardar";
             this.iconBtnGuardar.Padding = new System.Windows.Forms.Padding(10);
-            this.iconBtnGuardar.Size = new System.Drawing.Size(393, 70);
+            this.iconBtnGuardar.Size = new System.Drawing.Size(280, 70);
             this.iconBtnGuardar.TabIndex = 7;
             this.iconBtnGuardar.Text = "GUARDAR";
             this.iconBtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,7 +157,7 @@ namespace VentasApp.Forms
             this.iconBtnEditProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconBtnEditProd.IconSize = 40;
             this.iconBtnEditProd.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconBtnEditProd.Location = new System.Drawing.Point(360, 218);
+            this.iconBtnEditProd.Location = new System.Drawing.Point(247, 218);
             this.iconBtnEditProd.Name = "iconBtnEditProd";
             this.iconBtnEditProd.Size = new System.Drawing.Size(50, 50);
             this.iconBtnEditProd.TabIndex = 9;
@@ -210,7 +197,7 @@ namespace VentasApp.Forms
             this.iconBtnEditCod.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconBtnEditCod.IconSize = 40;
             this.iconBtnEditCod.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconBtnEditCod.Location = new System.Drawing.Point(360, 50);
+            this.iconBtnEditCod.Location = new System.Drawing.Point(247, 50);
             this.iconBtnEditCod.Name = "iconBtnEditCod";
             this.iconBtnEditCod.Size = new System.Drawing.Size(50, 50);
             this.iconBtnEditCod.TabIndex = 11;
@@ -241,13 +228,13 @@ namespace VentasApp.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.Controls.Add(this.PnlCargaProductos, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.PnlGridProductos, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1467, 693);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1090, 693);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // PnlCargaProductos
@@ -270,49 +257,35 @@ namespace VentasApp.Forms
             this.PnlCargaProductos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PnlCargaProductos.Location = new System.Drawing.Point(3, 86);
             this.PnlCargaProductos.Name = "PnlCargaProductos";
-            this.PnlCargaProductos.Size = new System.Drawing.Size(434, 521);
+            this.PnlCargaProductos.Size = new System.Drawing.Size(321, 521);
             this.PnlCargaProductos.TabIndex = 14;
             // 
-            // PnlGridProductos
+            // panel1
             // 
-            this.PnlGridProductos.Controls.Add(this.DgvProductos);
-            this.PnlGridProductos.Controls.Add(this.TxtBusqueda);
-            this.PnlGridProductos.Controls.Add(this.LblBusqueda);
-            this.PnlGridProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlGridProductos.Location = new System.Drawing.Point(443, 3);
-            this.PnlGridProductos.Name = "PnlGridProductos";
-            this.PnlGridProductos.Size = new System.Drawing.Size(1021, 687);
-            this.PnlGridProductos.TabIndex = 14;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buscadorProductosUc1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(330, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(757, 687);
+            this.panel1.TabIndex = 15;
             // 
-            // DgvProductos
+            // buscadorProductosUc1
             // 
-            this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvProductos.Location = new System.Drawing.Point(0, 125);
-            this.DgvProductos.Name = "DgvProductos";
-            this.DgvProductos.ReadOnly = true;
-            this.DgvProductos.RowHeadersWidth = 51;
-            this.DgvProductos.RowTemplate.Height = 24;
-            this.DgvProductos.Size = new System.Drawing.Size(1021, 562);
-            this.DgvProductos.TabIndex = 14;
-            this.DgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductos_CellDoubleClick);
-            this.DgvProductos.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvProductos_ColumnHeaderMouseClick);
-            // 
-            // TxtBusqueda
-            // 
-            this.TxtBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBusqueda.Location = new System.Drawing.Point(0, 51);
-            this.TxtBusqueda.Name = "TxtBusqueda";
-            this.TxtBusqueda.Size = new System.Drawing.Size(1021, 74);
-            this.TxtBusqueda.TabIndex = 15;
-            this.TxtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
+            this.buscadorProductosUc1.BackColor = System.Drawing.SystemColors.Control;
+            this.buscadorProductosUc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buscadorProductosUc1.Location = new System.Drawing.Point(0, 0);
+            this.buscadorProductosUc1.Name = "buscadorProductosUc1";
+            this.buscadorProductosUc1.Size = new System.Drawing.Size(755, 685);
+            this.buscadorProductosUc1.TabIndex = 0;
+            this.buscadorProductosUc1.ProductoSeleccionadoEvento += new System.EventHandler<Modelos.Producto>(this.buscadorProductosUc1_ProductoSeleciconado);
             // 
             // ProductosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1467, 693);
+            this.ClientSize = new System.Drawing.Size(1090, 693);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ProductosForm";
             this.Text = "ProductosForm";
@@ -321,9 +294,7 @@ namespace VentasApp.Forms
             this.tableLayoutPanel1.ResumeLayout(false);
             this.PnlCargaProductos.ResumeLayout(false);
             this.PnlCargaProductos.PerformLayout();
-            this.PnlGridProductos.ResumeLayout(false);
-            this.PnlGridProductos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -336,15 +307,13 @@ namespace VentasApp.Forms
         private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.Label LblPrecio;
         private FontAwesome.Sharp.IconButton iconBtnGuardar;
-        private System.Windows.Forms.Label LblBusqueda;
         private FontAwesome.Sharp.IconButton iconBtnEditProd;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton iconBtnEditCod;
         private System.Windows.Forms.Label LblUltActualizacion;
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel PnlGridProductos;
-        private TextBox TxtBusqueda;
-        private DataGridView DgvProductos;
         private Panel PnlCargaProductos;
+        private Panel panel1;
+        private ControlesDeUsuario.BuscadorProductosUc buscadorProductosUc1;
     }
 }

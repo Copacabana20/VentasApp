@@ -23,13 +23,13 @@ namespace VentasApp.Util
             }
         }
 
-        public static DialogResult ShowUserControlAsDialog(UserControl control, string title = "Ventana Modal", int width = 600, int height = 800)
+        public static DialogResult ShowUserControlAsDialog(UserControl control, string title = "Branty Ventas", int width = 600, int height = 800)
         {
             using (var form = new Form())
             {
                 form.Name = "UserControlAsDialogForm";
                 form.Text = title;
-                form.FormBorderStyle = FormBorderStyle.FixedDialog;
+                form.FormBorderStyle = FormBorderStyle.SizableToolWindow;
                 form.StartPosition = FormStartPosition.CenterScreen;
                 form.ClientSize = new Size(width, height);
                 form.Controls.Add(control);

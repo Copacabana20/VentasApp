@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using VentasApp.Dto;
 
 namespace VentasApp.Modelos
 {
@@ -13,11 +15,13 @@ namespace VentasApp.Modelos
 
         public Venta() { }
 
-        public Venta(int id, DateTime fecha, decimal total)
+        public Venta(int cajaId, List<GridDetalleVentaDto> dto)
         {
-            Id = id;
-            Fecha = fecha;
-            Total = total;
+            Fecha = DateTime.Now;
+            Total = dto.Sum(x=> x.Subtotal);
+            CajaId = cajaId;
+            Detalle = (from d in dto
+                      select new DetalleVenta(d)).ToList();
         }
 
         public override string ToString()

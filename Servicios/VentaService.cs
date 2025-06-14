@@ -22,13 +22,12 @@ namespace VentasApp.Servicios
             return data;
         }
 
-        public static void RegistrarVenta(Venta venta, List<DetalleVenta> detalles)
+        public static void RegistrarVenta(Venta venta)
         {
             SqliteConexionDAL con = new SqliteConexionDAL();
             try
             {
                 con.BeginTransaction();
-                    // Insertar venta
                 string insertVenta = @"INSERT INTO Ventas (Fecha, Total, CajaId) 
                                         VALUES (@Fecha, @Total, @CajaId); 
                                        SELECT last_insert_rowid();";
@@ -43,9 +42,9 @@ namespace VentasApp.Servicios
                 venta.Id = con.TraerUnValor(insertVenta, VentaParameters);
 
                 // Insertar detalles de venta
-                foreach (var detalle in detalles)
+                foreach (var detalle in venta.Detalle)
                 {
-                    string insertDetalle = @"INSERT INTO DetalleVentas 
+                    string insertDetalle = @"INSERT INTO DetalleVenta 
                         (VentaId, ProductoId, NombreProducto, Cantidad, PrecioUnitario, Subtotal) 
                         VALUES (@VentaId, @ProductoId, @NombreProducto, @Cantidad, @PrecioUnitario, @Subtotal)";
 
@@ -56,7 +55,7 @@ namespace VentasApp.Servicios
                         con.CrearParametro("@NombreProducto", detalle.NombreProducto),
                         con.CrearParametro("@Cantidad", detalle.Cantidad),
                         con.CrearParametro("@PrecioUnitario", detalle.PrecioUnitario),
-                        con.CrearParametro("@Subtotal", detalle.Subtotal)                        
+                        con.CrearParametro("@Subtotal", detalle.Subtotal)
                     };
 
                     con.Ejecutar(insertDetalle, DetalleParameters);

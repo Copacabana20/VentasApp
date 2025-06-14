@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Windows.Forms;
 using VentasApp.Modelos;
 using VentasApp.Servicios;
@@ -11,9 +10,7 @@ namespace VentasApp.Forms
 {
     public partial class ProductosForm : Form
     {
-        private static List<Producto> _prods = new List<Producto>();
         private static int _currentProductId = 0;
-        private static bool _OrderAscending;
 
         public ProductosForm()
         {
@@ -22,16 +19,12 @@ namespace VentasApp.Forms
 
         private void ProductosForm_Load(object sender, EventArgs e)
         {
-            DataGridViewStyler.ApplyModernStyle(DgvProductos);
-            _prods = ProductoService.ObtenerTodos();
-            ActualizarGridProductos(_prods);
             LimpiarForm();
         }
 
         private void LimpiarForm()
         {
             _currentProductId = 0;
-            TxtBusqueda.Clear();
             TxtCodigo.Clear();
             TxtProducto.Clear();
             TxtPrecio.Clear();
@@ -58,7 +51,7 @@ namespace VentasApp.Forms
                     iconBtnEditProd.Visible = true;
                     LblUltActualizacion.Text = $"Producto actualizado por ultima vez el {prod.UltimaActualizacion.ToString("dd/MM/yyyy")}";
                     LblUltActualizacion.Visible=true;
-                    TxtPrecio.Text = prod.Precio.ToString();
+                    TxtPrecio.Text = prod.Precio.ToString().Replace(",",".");
                     TxtPrecio.Focus();
                     TxtPrecio.Select();
                 }
@@ -92,8 +85,7 @@ namespace VentasApp.Forms
                 {
                     var producto = ValidarDatosCorrectos();
                     GuardarProducto(producto);
-                    _prods = ProductoService.ObtenerTodos();
-                    ActualizarGridProductos(_prods);
+                    ActualizarGridProductos();
                     LimpiarForm();
                 }
                 catch (Exception ex)
@@ -131,8 +123,7 @@ namespace VentasApp.Forms
                 if (Dialog.Confirm("¿Desea guardar los productos?"))
                 {
                     GuardarProducto(producto);
-                    _prods = ProductoService.ObtenerTodos();
-                    ActualizarGridProductos(_prods);
+                    ActualizarGridProductos();
                     LimpiarForm();
                 }
             }
@@ -181,15 +172,9 @@ namespace VentasApp.Forms
             Toast.Success("El producto se guardó correctamente");
         }
 
-        private void ActualizarGridProductos(List<Producto> prods)
+        private void ActualizarGridProductos()
         {
-            DgvProductos.DataSource = prods;
-            DgvProductos.Columns["Id"].Visible = false;
-        }
-
-        private void TxtBusqueda_TextChanged(object sender, EventArgs e)
-        {
-            ActualizarGridProductos(_prods.Where(x => x.Nombre.Contains(TxtBusqueda.Text)).ToList());
+            buscadorProductosUc1.ActualizarGridProductos();
         }
 
         private void iconBtnEditCod_Click(object sender, EventArgs e)
@@ -206,12 +191,6 @@ namespace VentasApp.Forms
             TxtProducto.Focus();
         }
 
-        private void DgvProductos_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewStyler.OrdenarDataGridView<Producto>(DgvProductos, e.ColumnIndex,_OrderAscending);
-            _OrderAscending = !_OrderAscending;
-        }
-
         private void TxtPrecio_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.V)
@@ -221,12 +200,9 @@ namespace VentasApp.Forms
             }
         }
 
-        private void DgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void buscadorProductosUc1_ProductoSeleciconado(object sender, Producto e)
         {
-            if (e.RowIndex < 0)
-                return;
-
-            Producto prod = (Producto)DgvProductos.Rows[e.RowIndex].DataBoundItem;
+            Producto prod = e;
             _currentProductId = prod.Id;
             TxtProducto.Text = prod.Nombre;
 
@@ -234,13 +210,12 @@ namespace VentasApp.Forms
             iconBtnEditProd.Visible = true;
             LblUltActualizacion.Text = $"Producto actualizado por ultima vez el {prod.UltimaActualizacion.ToString("dd/MM/yyyy")}";
             LblUltActualizacion.Visible = true;
-            TxtPrecio.Text = prod.Precio.ToString();
+            TxtPrecio.Text = prod.Precio.ToString().Replace(",",".");
             TxtCodigo.Text = prod.Codigo;
             TxtCodigo.Enabled = false;
             iconBtnEditCod.Visible = true;
             TxtPrecio.Focus();
             TxtPrecio.Select();
         }
-
     }
 }

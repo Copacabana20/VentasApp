@@ -162,7 +162,7 @@ namespace VentasApp.Forms
                     case Keys.Enter:
                         if (string.IsNullOrEmpty(TxtCodigo.Text))
                         {
-                            FinalizarVenta(); //TODO
+                            FinalizarVenta();
                         }
                         else
                         {
@@ -185,6 +185,7 @@ namespace VentasApp.Forms
             }
         }
 
+        #region Cargar productos detalle
         private void CargarProductoPorNombre()
         {
             var miControl = new BuscadorProductosUc();
@@ -196,29 +197,6 @@ namespace VentasApp.Forms
                 CargarProductoPorCodigo(seleccionado);
             }
         }
-
-        private void ModificarCantidad() 
-        {
-            if (!int.TryParse(TxtCodigo.Text,out _Cantidad))
-            {
-                Toast.Error("Ingrese un numero valido");
-            }
-            else
-            {
-                Toast.Info($"Se modificó la cantidad a vender. Valor actual: {_Cantidad}");
-            }
-            LimpiarCodigo();
-        }
-
-        private void CancelarVenta()
-        {
-            if (Dialog.Confirm("¿Esta seguro de cancelar la venta?"))
-            {
-                _DetalleVentaList.Clear();
-                ActualizarDatos();
-            }
-        }
-
         private void CargarProductoPorCodigo(Producto producto = null)
         {
             var prod = producto ?? ProductoService.BuscarPorCodigo(TxtCodigo.Text);
@@ -238,7 +216,6 @@ namespace VentasApp.Forms
 
             ActualizarDatos();
         }
-
         private void CargarProductoSinCodigo()
         {
             decimal precio;
@@ -252,9 +229,51 @@ namespace VentasApp.Forms
             ActualizarDatos();
         }
 
+        #endregion
+        
+        private void ModificarCantidad() 
+        {
+            if (!int.TryParse(TxtCodigo.Text,out _Cantidad))
+            {
+                Toast.Error("Ingrese un numero valido");
+            }
+            else
+            {
+                Toast.Info($"Se modificó la cantidad a vender. Valor actual: {_Cantidad}");
+            }
+            LimpiarCodigo();
+        }
+
+        private void CancelarVenta()
+        {
+            if (Dialog.Confirm("¿Esta seguro de cancelar la venta?"))
+            {
+                ReiniciarVenta();
+            }
+        }
+
+        private void ReiniciarVenta()
+        {
+            _DetalleVentaList.Clear();
+            ActualizarDatos();
+        }
+
         private void FinalizarVenta()
         {
-            Toast.Success("Venta finalazada");
+            if (!_DetalleVentaList.Any())
+            {
+                Toast.Warning("No hay productos vendidos. Cargue algunos productos antes de finalizar la venta");
+                return;
+            }
+
+
+            Venta VentaRealizada = new Venta(_IdCaja,_DetalleVentaList);
+            var result = Dialog.ShowUserControlAsDialog(new ConfirmarVentaUc(VentaRealizada),width: 480, height: 350);
+            if (result == DialogResult.OK)
+            {
+                Toast.Success("Venta realizada con exito");
+                ReiniciarVenta();
+            }
         }
     }
 

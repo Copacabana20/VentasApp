@@ -57,6 +57,7 @@ namespace VentasApp.DAL.Validacion
                     NombreProducto TEXT NOT NULL,
                     Cantidad INTEGER NOT NULL,
                     PrecioUnitario REAL NOT NULL,
+                    Subtotal REAL NOT NULL,
                     FOREIGN KEY (VentaId) REFERENCES Ventas(Id),
                     FOREIGN KEY (ProductoId) REFERENCES Productos(Id)
                 );

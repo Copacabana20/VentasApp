@@ -28,16 +28,22 @@ namespace VentasApp.Servicios
             // Crear instancia por defecto
             var datosPorDefecto = new DatosNegocio()
             {
-                DNI = "12345678",
-                Nombre = "Branty ventas",
-                Direccion = "Calle Falsa 123",
-                Localidad = "Buenos Aires",
+                Propietario = new Owner()
+                {
+                    Dni = "12345678",
+                    Nombre = "Branty",
+                    Apellido = "Ventas",
+                    Telefono = "123456789"
+                },
+                NombreNegocio = "Branty ventas",
+                Calle = "Calle Falsa",
+                Altura = "123",
+                Localidad = "Quilmes",
                 CodigoPostal = "1000",
-                Telefono = "123456789",
                 Cuit = "30-12345678-9",
                 IngresosBrutos = "123456789",
                 InicioDeActividades = "01/01/2020",
-                Leyenda = "¡Gracias por su compra!"
+                SitioWeb = "https://google.com"
             };
             GuardarDatos(datosPorDefecto);
         }

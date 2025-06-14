@@ -17,16 +17,16 @@ namespace VentasApp.Forms.ControlesDeUsuario
             CargarDatos();
         }
 
-        private void CargarDatos()
+        public void CargarDatos()
         {
             var datos = DatosNegocioService.ObtenerDatos();
             string date = DateTime.Now.ToString("dd/MM/yyyy");
-            LblTitulo.Text = datos.Nombre;
-            LblDireccion.Text = $"Direccion: {datos.Direccion}";
+            LblTitulo.Text = datos.NombreNegocio;
+            LblDireccion.Text = $"Direccion: {datos.Calle} {datos.Altura}";
             LblLocalidad.Text = $"Localidad: {datos.Localidad} ({datos.CodigoPostal})";
             LblCuit.Text = $"Cuit: { datos.Cuit}";
             LblIngBrutos.Text = $"Ing. Brutos: {datos.IngresosBrutos}";
-            LblTelefono.Text = $"Telefono: {datos.Telefono}";
+            LblTelefono.Text = $"Telefono: {datos.Propietario.Telefono}";
             LblFecha.Text = $"Fecha: {date}";
         }
     }
