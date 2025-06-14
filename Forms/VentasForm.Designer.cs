@@ -129,7 +129,7 @@
             // LblArticulos
             // 
             this.LblArticulos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArticulos.Location = new System.Drawing.Point(309, 29);
             this.LblArticulos.Name = "LblArticulos";
             this.LblArticulos.Size = new System.Drawing.Size(394, 72);
@@ -140,7 +140,7 @@
             // LblSubTotal
             // 
             this.LblSubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSubTotal.Location = new System.Drawing.Point(712, 29);
             this.LblSubTotal.Name = "LblSubTotal";
             this.LblSubTotal.Size = new System.Drawing.Size(296, 72);
@@ -184,6 +184,7 @@
             // LblFechaApertura
             // 
             this.LblFechaApertura.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblFechaApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaApertura.ForeColor = System.Drawing.Color.White;
             this.LblFechaApertura.Location = new System.Drawing.Point(0, 0);
             this.LblFechaApertura.Name = "LblFechaApertura";
@@ -194,9 +195,12 @@
             // 
             // iconBtnAbrirCerrarCaja
             // 
+            this.iconBtnAbrirCerrarCaja.BackColor = System.Drawing.Color.Green;
             this.iconBtnAbrirCerrarCaja.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconBtnAbrirCerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconBtnAbrirCerrarCaja.ForeColor = System.Drawing.Color.White;
             this.iconBtnAbrirCerrarCaja.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
-            this.iconBtnAbrirCerrarCaja.IconColor = System.Drawing.Color.Black;
+            this.iconBtnAbrirCerrarCaja.IconColor = System.Drawing.Color.White;
             this.iconBtnAbrirCerrarCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconBtnAbrirCerrarCaja.IconSize = 25;
             this.iconBtnAbrirCerrarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -206,7 +210,7 @@
             this.iconBtnAbrirCerrarCaja.TabIndex = 0;
             this.iconBtnAbrirCerrarCaja.Text = "Abrir caja";
             this.iconBtnAbrirCerrarCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconBtnAbrirCerrarCaja.UseVisualStyleBackColor = true;
+            this.iconBtnAbrirCerrarCaja.UseVisualStyleBackColor = false;
             this.iconBtnAbrirCerrarCaja.Click += new System.EventHandler(this.iconBtnAbrirCerrarCaja_Click);
             // 
             // VentasForm

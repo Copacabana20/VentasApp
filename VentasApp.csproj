@@ -301,6 +301,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\SqliteConexionDAL.cs" />
+    <Compile Include="Reports\UserControls\EtiquetaProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\UserControls\EtiquetaProductoForm.Designer.cs">
+      <DependentUpon>EtiquetaProductoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\UserControls\TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,7 @@
     <Compile Include="Util\BarCodeGenerator.cs" />
     <Compile Include="Util\DataGridViewStyler.cs" />
     <Compile Include="Util\Dialog.cs" />
+    <Compile Include="Util\ImageHelper.cs" />
     <Compile Include="Util\ImpresionReporteHelper.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -354,6 +361,9 @@
     <EmbeddedResource Include="Forms\ProductosForm.resx">
       <DependentUpon>ProductosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportesForm.resx">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +384,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\TicketReport.rdlc" />
+    <EmbeddedResource Include="Reports\EtiquetaProductoReport.rdlc" />
+    <EmbeddedResource Include="Reports\UserControls\EtiquetaProductoForm.resx">
+      <DependentUpon>EtiquetaProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\UserControls\TicketForm.resx">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +413,8 @@
     <Content Include="IconoBrantyVentas2.ico" />
     <None Include="Resources\logoBrantyVentas.PNG" />
     <Content Include="iconoBrantyVentas3.ico" />
+    <None Include="Resources\Tienda de esquina Branty Ventas.png" />
+    <None Include="Resources\FondoSuperDifuminado.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

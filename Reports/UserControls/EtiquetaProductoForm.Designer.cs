@@ -1,6 +1,6 @@
-﻿namespace VentasApp.Forms
+﻿namespace VentasApp.Reports.UserControls
 {
-    partial class ReportesForm
+    partial class EtiquetaProductoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // ReportesForm
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "VentasApp.Reports.EtiquetaProductoReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(450, 249);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // EtiquetaProductoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::VentasApp.Properties.Resources.Próximamente_en_Branty_Ventas;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "ReportesForm";
-            this.Text = "ReportesForm";
+            this.ClientSize = new System.Drawing.Size(450, 249);
+            this.Controls.Add(this.reportViewer1);
+            this.Name = "EtiquetaProductoForm";
+            this.Text = "EtiquetaProductoForm";
+            this.Load += new System.EventHandler(this.EtiquetaProductoForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

@@ -20,6 +20,7 @@ namespace VentasApp.Forms
         private void ProductosForm_Load(object sender, EventArgs e)
         {
             LimpiarForm();
+            ActualizarGridProductos();
         }
 
         private void LimpiarForm()

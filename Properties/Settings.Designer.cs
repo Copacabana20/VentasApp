@@ -22,5 +22,29 @@ namespace VentasApp.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Recibos")]
+        public string ImpresoraName {
+            get {
+                return ((string)(this["ImpresoraName"]));
+            }
+            set {
+                this["ImpresoraName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ImprimirTicket {
+            get {
+                return ((bool)(this["ImprimirTicket"]));
+            }
+            set {
+                this["ImprimirTicket"] = value;
+            }
+        }
     }
 }

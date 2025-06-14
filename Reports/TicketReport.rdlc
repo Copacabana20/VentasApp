@@ -40,20 +40,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>ALMACEN COPACABANA</Value>
+                <Value>=First(Fields!NombreNegocio.Value, "DsDatosNegocio")</Value>
                 <Style>
                   <FontSize>15pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.3175cm</Top>
-        <Left>0.43603cm</Left>
         <Height>0.7905cm</Height>
-        <Width>6.818cm</Width>
+        <Width>7.25403cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

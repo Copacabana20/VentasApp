@@ -1,4 +1,6 @@
-﻿namespace VentasApp.Forms
+﻿using VentasApp.Properties;
+
+namespace VentasApp.Forms
 {
     partial class DatosNegocioForm
     {
@@ -63,6 +65,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.TxtSitioWeb);
             this.panel1.Controls.Add(this.LblSitioWeb);
             this.panel1.Controls.Add(this.TxtInicioActividades);
@@ -105,7 +108,7 @@
             this.TxtSitioWeb.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSitioWeb.Name = "TxtSitioWeb";
             this.TxtSitioWeb.Size = new System.Drawing.Size(567, 55);
-            this.TxtSitioWeb.TabIndex = 55;
+            this.TxtSitioWeb.TabIndex = 9;
             // 
             // LblSitioWeb
             // 
@@ -128,8 +131,8 @@
             this.TxtInicioActividades.Location = new System.Drawing.Point(28, 573);
             this.TxtInicioActividades.Margin = new System.Windows.Forms.Padding(4);
             this.TxtInicioActividades.Name = "TxtInicioActividades";
-            this.TxtInicioActividades.Size = new System.Drawing.Size(432, 55);
-            this.TxtInicioActividades.TabIndex = 53;
+            this.TxtInicioActividades.Size = new System.Drawing.Size(420, 55);
+            this.TxtInicioActividades.TabIndex = 8;
             // 
             // LblInicioActividades
             // 
@@ -153,7 +156,7 @@
             this.TxtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(336, 55);
-            this.TxtTelefono.TabIndex = 51;
+            this.TxtTelefono.TabIndex = 5;
             // 
             // LblTelefono
             // 
@@ -177,7 +180,7 @@
             this.TxtDni.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDni.Name = "TxtDni";
             this.TxtDni.Size = new System.Drawing.Size(267, 55);
-            this.TxtDni.TabIndex = 49;
+            this.TxtDni.TabIndex = 3;
             // 
             // LblDni
             // 
@@ -201,7 +204,7 @@
             this.TxtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(373, 55);
-            this.TxtApellido.TabIndex = 47;
+            this.TxtApellido.TabIndex = 2;
             // 
             // LblApellido
             // 
@@ -225,7 +228,7 @@
             this.TxtIngBrutos.Margin = new System.Windows.Forms.Padding(4);
             this.TxtIngBrutos.Name = "TxtIngBrutos";
             this.TxtIngBrutos.Size = new System.Drawing.Size(495, 55);
-            this.TxtIngBrutos.TabIndex = 45;
+            this.TxtIngBrutos.TabIndex = 7;
             // 
             // LblIngBrutos
             // 
@@ -247,7 +250,7 @@
             this.TxtCuit.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCuit.Name = "TxtCuit";
             this.TxtCuit.Size = new System.Drawing.Size(495, 55);
-            this.TxtCuit.TabIndex = 43;
+            this.TxtCuit.TabIndex = 6;
             // 
             // LblCuit
             // 
@@ -269,7 +272,7 @@
             this.TxtRazonSocial.Margin = new System.Windows.Forms.Padding(4);
             this.TxtRazonSocial.Name = "TxtRazonSocial";
             this.TxtRazonSocial.Size = new System.Drawing.Size(652, 55);
-            this.TxtRazonSocial.TabIndex = 41;
+            this.TxtRazonSocial.TabIndex = 4;
             // 
             // LblRazonSocial
             // 
@@ -293,7 +296,7 @@
             this.TxtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(336, 55);
-            this.TxtNombre.TabIndex = 39;
+            this.TxtNombre.TabIndex = 1;
             // 
             // LblNombre
             // 
@@ -337,7 +340,7 @@
             this.TxtCodPostal.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCodPostal.Name = "TxtCodPostal";
             this.TxtCodPostal.Size = new System.Drawing.Size(132, 55);
-            this.TxtCodPostal.TabIndex = 36;
+            this.TxtCodPostal.TabIndex = 13;
             // 
             // LblCodPostal
             // 
@@ -360,7 +363,7 @@
             this.TxtLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.TxtLocalidad.Name = "TxtLocalidad";
             this.TxtLocalidad.Size = new System.Drawing.Size(303, 55);
-            this.TxtLocalidad.TabIndex = 34;
+            this.TxtLocalidad.TabIndex = 12;
             // 
             // LblLocalidad
             // 
@@ -382,7 +385,7 @@
             this.TxtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(132, 55);
-            this.TxtNumero.TabIndex = 32;
+            this.TxtNumero.TabIndex = 11;
             // 
             // LblNumero
             // 
@@ -405,7 +408,7 @@
             this.TxtCalle.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCalle.Name = "TxtCalle";
             this.TxtCalle.Size = new System.Drawing.Size(303, 55);
-            this.TxtCalle.TabIndex = 30;
+            this.TxtCalle.TabIndex = 10;
             // 
             // LblCalle
             // 
@@ -436,6 +439,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::VentasApp.Properties.Resources.FondoSuperDifuminado;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1112, 903);
             this.Controls.Add(this.panel1);
             this.Name = "DatosNegocioForm";

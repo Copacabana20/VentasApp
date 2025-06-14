@@ -189,6 +189,7 @@ namespace VentasApp.Forms
         private void CargarProductoPorNombre()
         {
             var miControl = new BuscadorProductosUc();
+            miControl.ActualizarGridProductos();
             var result = Dialog.ShowUserControlAsDialog(miControl, "Buscar Producto");
 
             if (result == DialogResult.OK)

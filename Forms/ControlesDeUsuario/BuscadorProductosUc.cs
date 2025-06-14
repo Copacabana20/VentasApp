@@ -23,7 +23,7 @@ namespace VentasApp.Forms.ControlesDeUsuario
         private void BuscadorProductosUc_Load(object sender, EventArgs e)
         {
             DataGridViewStyler.ApplyModernStyle(DgvProductos);
-            ActualizarGridProductos();
+            //ActualizarGridProductos();
             TxtBusqueda.Clear();
             TxtBusqueda.Focus();
         }

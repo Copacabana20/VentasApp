@@ -63,6 +63,16 @@ namespace VentasApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondoSuperDifuminado {
+            get {
+                object obj = ResourceManager.GetObject("FondoSuperDifuminado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoBrantyVentas {
             get {
                 object obj = ResourceManager.GetObject("logoBrantyVentas", resourceCulture);
@@ -76,6 +86,16 @@ namespace VentasApp.Properties {
         internal static System.Drawing.Bitmap Próximamente_en_Branty_Ventas {
             get {
                 object obj = ResourceManager.GetObject("Próximamente en Branty Ventas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tienda_de_esquina_Branty_Ventas {
+            get {
+                object obj = ResourceManager.GetObject("Tienda de esquina Branty Ventas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
