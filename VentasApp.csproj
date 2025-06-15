@@ -15,10 +15,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\brrodriguez\source\repos\VentasApp\docs\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -26,7 +26,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <InstallUrl>https://copacabana20.github.io/VentasApp/VentasApp.application/</InstallUrl>
+    <UpdateUrl>https://copacabana20.github.io/VentasApp/VentasApp.application/</UpdateUrl>
     <TargetCulture>es-AR</TargetCulture>
     <ProductName>BrantyVentas</ProductName>
     <PublisherName>Brandon Rodriguez</PublisherName>
