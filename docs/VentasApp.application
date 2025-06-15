@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="https://copacabana20.github.io/VentasApp/VentasApp.application/VentasApp.application" />
+    <deploymentProvider codebase="https://copacabana20.github.io/VentasApp/VentasApp.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
