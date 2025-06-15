@@ -395,12 +395,6 @@
     <EmbeddedResource Include="Reports\UserControls\TicketForm.resx">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="docs\Application Files\VentasApp_1_0_0_5\VentasApp.exe.config" />
-    <None Include="docs\Application Files\VentasApp_1_0_0_5\VentasApp.exe.manifest" />
-    <None Include="docs\VentasApp.application" />
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\VentasApp.Modelos.DatosNegocio.datasource" />
-    <None Include="Properties\DataSources\VentasApp.Modelos.Venta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
